@@ -1,0 +1,41 @@
+<div class="ui selection dropdown">
+  <input type="hidden" name="gender">
+  <i class="dropdown icon"></i>
+  <div class="default text">Gender</div>
+  <div class="menu">
+    {{#each depts as |values|}}
+      <div class="item" onclick={{action 'fetchData' values "deptName"}}>{{values}}</div>
+    {{/each}}
+  </div>
+</div>
+
+<div class="ui selection dropdown">
+  <input type="hidden" name="gender">
+  <i class="dropdown icon"></i>
+  <div class="default text">Gender</div>
+  <div class="menu">
+    {{#each semesters as |values|}}
+      <div class="item" onclick={{action 'fetchData' values "semesterNum"}}>{{values}}</div>
+    {{/each}}
+  </div>
+</div>
+
+
+<div class="ui cards">
+  {{#each subjectData as |subjects|}}
+  <div class=" blurring dimmable card">
+     <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">Select Subject</div>
+          </div>
+        </div>
+      </div>
+    <div class="content">
+      <div class="description">
+        {{subjects}}
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
