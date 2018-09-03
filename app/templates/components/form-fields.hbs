@@ -1,36 +1,29 @@
 <div class="ui selection dropdown">
   <input type="hidden" name="gender">
   <i class="dropdown icon"></i>
-  <div class="default text">Gender</div>
+  <div class="default text">Department</div>
   <div class="menu">
     {{#each depts as |values|}}
-      <div class="item" onclick={{action 'fetchData' values "deptName"}}>{{values}}</div>
+    <div class="item" onclick={{action 'fetchData' values "deptName"}}>{{values}}</div>
     {{/each}}
   </div>
 </div>
+
 
 <div class="ui selection dropdown">
   <input type="hidden" name="gender">
   <i class="dropdown icon"></i>
-  <div class="default text">Gender</div>
+  <div class="default text">Semester</div>
   <div class="menu">
     {{#each semesters as |values|}}
-      <div class="item" onclick={{action 'fetchData' values "semesterNum"}}>{{values}}</div>
+    <div class="item" onclick={{action 'fetchData' values "semesterNum"}}>{{values}}</div>
     {{/each}}
   </div>
 </div>
 
-
 <div class="ui cards">
   {{#each subjectData as |subjects|}}
-  <div class=" blurring dimmable card">
-     <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
-            <div class="ui inverted button">Select Subject</div>
-          </div>
-        </div>
-      </div>
+  <div class="card" onclick={{action ''}}>
     <div class="content">
       <div class="description">
         {{subjects}}
