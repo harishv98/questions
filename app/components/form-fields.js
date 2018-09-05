@@ -14,7 +14,6 @@ export default Component.extend({
             on: 'hover'
           });
     },
-
     checkValid(){
         return (this.get('deptName')!="" && this.get('semesterNum')!="")?true:false;
     },
