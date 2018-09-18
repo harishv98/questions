@@ -1,30 +1,41 @@
 <div class="title">
     part-A
 </div>
-<div class="add-ques" onclick={{action 'add' 'A'}}>Add</div>
+<div class="add-ques" onclick={{action 'add' 'twoMark'}}>Add</div>
 {{#each twoMark as |ques|}}
-
-{{/each}}
+    {{log ques}}
+    <p>{{ques}}</p>
+ {{/each}}
 
 <div class="title">
     part-B
 </div>
-<div class="add-ques" onclick={{action 'add' 'B'}}>Add</div>
-{{#each eightMark as |ques|}}
+<div class="add-ques" onclick={{action 'add' 'eightMark'}}>Add</div>
+{{#each eightMark as |ques|}} 
 
 {{/each}}
 
 <div class="title">
     part-C
 </div>
-<div class="add-ques" onclick={{action 'add' 'C'}}>Add</div>
-{{#each sixteenMark as |ques|}}
+<div class="add-ques" onclick={{action 'add' 'sixteenMark'}}>Add</div>
+{{#each sixteenMark as |ques|}} 
 
 {{/each}}
 
 <div class="ui longer modal">
-  <div class="header">Header</div>
-  <div class="scrolling content">
-    <p>Very long content goes here</p>
-  </div>
+    <div class="header">Header</div>
+    <div class="scrolling content">
+        <div class="ui buttons">
+            {{#each subjectUnits as |unit|}}
+                <button class="ui button" {{action 'fetchQuestions' unit}}>{{unit}}</button>
+            {{/each}}
+        </div>
+        {{#each questContent as |ques|}}
+            <div class="ui message">
+                <p>{{ques.content}}</p>
+                <button class="ui inverted green button" {{action 'addQuestion' ques.content}}>Add</button>
+            </div>
+        {{/each}}
+    </div>  
 </div>
